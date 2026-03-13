@@ -1,0 +1,6 @@
+@KarnelTravels.API_HostAddress = http://localhost:5177
+
+GET {{KarnelTravels.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
