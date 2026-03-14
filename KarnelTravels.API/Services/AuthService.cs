@@ -18,6 +18,9 @@ public interface IAuthService
     Task<ApiResponse<string>> ForgotPasswordAsync(string email);
     Task<ApiResponse<string>> ResetPasswordAsync(ResetPasswordRequest request);
     Task<ApiResponse<AuthResponse>> AdminLoginAsync(LoginRequest request);
+    Task<ApiResponse<string>> LogoutAsync(string userId);
+    Task<ApiResponse<UserProfileDto>> GetCurrentUserAsync(string userId);
+    Task<ApiResponse<string>> ChangePasswordAsync(string userId, ChangePasswordRequest request);
 }
 
 public class AuthService : IAuthService
@@ -264,6 +267,127 @@ public class AuthService : IAuthService
             UserRole.Moderator => new List<string> { "ManageContent", "ViewReports" },
             UserRole.Staff => new List<string> { "ManageBookings" },
             _ => new List<string>()
+        };
+    }
+
+    public async Task<ApiResponse<string>> LogoutAsync(string userId)
+    {
+        if (string.IsNullOrEmpty(userId) || !Guid.TryParse(userId, out var id))
+        {
+            return new ApiResponse<string>
+            {
+                Success = false,
+                Message = "Invalid user"
+            };
+        }
+
+        var user = await _context.Users.FindAsync(id);
+        if (user == null)
+        {
+            return new ApiResponse<string>
+            {
+                Success = false,
+                Message = "User not found"
+            };
+        }
+
+        user.RefreshToken = null;
+        user.RefreshTokenExpiryTime = null;
+        await _context.SaveChangesAsync();
+
+        return new ApiResponse<string>
+        {
+            Success = true,
+            Message = "Logout successful"
+        };
+    }
+
+    public async Task<ApiResponse<UserProfileDto>> GetCurrentUserAsync(string userId)
+    {
+        if (string.IsNullOrEmpty(userId) || !Guid.TryParse(userId, out var id))
+        {
+            return new ApiResponse<UserProfileDto>
+            {
+                Success = false,
+                Message = "Invalid user"
+            };
+        }
+
+        var user = await _context.Users.FindAsync(id);
+        if (user == null)
+        {
+            return new ApiResponse<UserProfileDto>
+            {
+                Success = false,
+                Message = "User not found"
+            };
+        }
+
+        return new ApiResponse<UserProfileDto>
+        {
+            Success = true,
+            Message = "Success",
+            Data = new UserProfileDto
+            {
+                UserId = user.Id,
+                FullName = user.FullName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                Avatar = user.Avatar,
+                DateOfBirth = user.DateOfBirth,
+                Gender = user.Gender,
+                IsEmailVerified = user.IsEmailVerified,
+                CreatedAt = user.CreatedAt
+            }
+        };
+    }
+
+    public async Task<ApiResponse<string>> ChangePasswordAsync(string userId, ChangePasswordRequest request)
+    {
+        if (string.IsNullOrEmpty(userId) || !Guid.TryParse(userId, out var id))
+        {
+            return new ApiResponse<string>
+            {
+                Success = false,
+                Message = "Invalid user"
+            };
+        }
+
+        var user = await _context.Users.FindAsync(id);
+        if (user == null)
+        {
+            return new ApiResponse<string>
+            {
+                Success = false,
+                Message = "User not found"
+            };
+        }
+
+        if (!BCrypt.Net.BCrypt.Verify(request.CurrentPassword, user.PasswordHash))
+        {
+            return new ApiResponse<string>
+            {
+                Success = false,
+                Message = "Current password is incorrect"
+            };
+        }
+
+        if (request.NewPassword != request.ConfirmNewPassword)
+        {
+            return new ApiResponse<string>
+            {
+                Success = false,
+                Message = "New passwords do not match"
+            };
+        }
+
+        user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+        await _context.SaveChangesAsync();
+
+        return new ApiResponse<string>
+        {
+            Success = true,
+            Message = "Password changed successfully"
         };
     }
 }
