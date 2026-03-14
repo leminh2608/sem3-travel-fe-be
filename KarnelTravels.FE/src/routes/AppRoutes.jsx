@@ -7,14 +7,12 @@ import AuthLayout from '@/layouts/AuthLayout/AuthLayout';
 
 // Auth Pages
 import LoginPage from '@/pages/auth/LoginPage/LoginPage';
+import RegisterPage from '@/pages/auth/RegisterPage/RegisterPage';
 import ForbiddenPage from '@/pages/error/ForbiddenPage/ForbiddenPage';
-
-// Protected Route Component
-import ProtectedRoute from '@/components/common/ProtectedRoute/ProtectedRoute';
 
 // Placeholder Pages
 const HomePage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <div className="text-center">
       <h1 className="text-5xl font-bold text-gray-800 mb-4">Chào mừng đến với KarnelTravels</h1>
       <p className="text-xl text-gray-600">Hành trình của bạn bắt đầu tại đây</p>
@@ -23,73 +21,73 @@ const HomePage = () => (
 );
 
 const AboutPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Giới thiệu</h1>
   </div>
 );
 
 const SearchPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Tìm kiếm</h1>
   </div>
 );
 
 const ContactPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Liên hệ</h1>
   </div>
 );
 
 const ProfilePage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Hồ sơ</h1>
   </div>
 );
 
 const BookingsPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Đơn đặt tour</h1>
   </div>
 );
 
 const WishlistPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Danh sách yêu thích</h1>
   </div>
 );
 
 const DestinationsPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Điểm du lịch</h1>
   </div>
 );
 
 const ToursPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Tour du lịch</h1>
   </div>
 );
 
 const HotelsPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Khách sạn</h1>
   </div>
 );
 
 const RestaurantsPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Nhà hàng</h1>
   </div>
 );
 
 const ResortsPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Resort</h1>
   </div>
 );
 
 const TransportsPage = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Phương tiện</h1>
   </div>
 );
@@ -148,61 +146,61 @@ const AdminDashboard = () => (
 );
 
 const AdminUsers = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Quản lý người dùng</h1>
   </div>
 );
 
 const AdminBookings = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Quản lý đặt tour</h1>
   </div>
 );
 
 const AdminDestinations = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Quản lý điểm du lịch</h1>
   </div>
 );
 
 const AdminTours = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Quản lý tour</h1>
   </div>
 );
 
 const AdminHotels = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Quản lý khách sạn</h1>
   </div>
 );
 
 const AdminRestaurants = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Quản lý nhà hàng</h1>
   </div>
 );
 
 const AdminResorts = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Quản lý resort</h1>
   </div>
 );
 
 const AdminTransports = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Quản lý phương tiện</h1>
   </div>
 );
 
 const AdminReports = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Báo cáo & Thống kê</h1>
   </div>
 );
 
 const AdminSettings = () => (
-  <div className="min-h-[80vh] flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center">
     <h1 className="text-4xl font-bold text-gray-800">Cài đặt</h1>
   </div>
 );
@@ -210,48 +208,42 @@ const AdminSettings = () => (
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* ==================== AUTH LAYOUT ==================== */}
+      {/* ==================== AUTH LAYOUT (Public - No Protection) ==================== */}
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Route>
 
-      {/* ==================== MAIN LAYOUT (User) ==================== */}
-      <Route element={<MainLayout />}>
-        <Route element={<ProtectedRoute />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/bookings" element={<BookingsPage />} />
-          <Route path="/wishlist" element={<WishlistPage />} />
-
-          {/* Info Pages */}
-          <Route path="/info/destinations" element={<DestinationsPage />} />
-          <Route path="/info/tours" element={<ToursPage />} />
-          <Route path="/info/hotels" element={<HotelsPage />} />
-          <Route path="/info/restaurants" element={<RestaurantsPage />} />
-          <Route path="/info/resorts" element={<ResortsPage />} />
-          <Route path="/info/transports" element={<TransportsPage />} />
-        </Route>
+      {/* ==================== MAIN LAYOUT (User - Protected) ==================== */}
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="search" element={<SearchPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="profile" element={<ProfilePage />} />
+        <Route path="bookings" element={<BookingsPage />} />
+        <Route path="wishlist" element={<WishlistPage />} />
+        <Route path="info/destinations" element={<DestinationsPage />} />
+        <Route path="info/tours" element={<ToursPage />} />
+        <Route path="info/hotels" element={<HotelsPage />} />
+        <Route path="info/restaurants" element={<RestaurantsPage />} />
+        <Route path="info/resorts" element={<ResortsPage />} />
+        <Route path="info/transports" element={<TransportsPage />} />
       </Route>
 
-      {/* ==================== ADMIN LAYOUT ==================== */}
-      <Route element={<ProtectedRoute adminOnly />}>
-        <Route element={<AdminLayout />}>
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/users" element={<AdminUsers />} />
-          <Route path="/admin/bookings" element={<AdminBookings />} />
-          <Route path="/admin/destinations" element={<AdminDestinations />} />
-          <Route path="/admin/tours" element={<AdminTours />} />
-          <Route path="/admin/hotels" element={<AdminHotels />} />
-          <Route path="/admin/restaurants" element={<AdminRestaurants />} />
-          <Route path="/admin/resorts" element={<AdminResorts />} />
-          <Route path="/admin/transports" element={<AdminTransports />} />
-          <Route path="/admin/reports" element={<AdminReports />} />
-          <Route path="/admin/settings" element={<AdminSettings />} />
-        </Route>
+      {/* ==================== ADMIN LAYOUT (Admin Only) ==================== */}
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<AdminDashboard />} />
+        <Route path="users" element={<AdminUsers />} />
+        <Route path="bookings" element={<AdminBookings />} />
+        <Route path="destinations" element={<AdminDestinations />} />
+        <Route path="tours" element={<AdminTours />} />
+        <Route path="hotels" element={<AdminHotels />} />
+        <Route path="restaurants" element={<AdminRestaurants />} />
+        <Route path="resorts" element={<AdminResorts />} />
+        <Route path="transports" element={<AdminTransports />} />
+        <Route path="reports" element={<AdminReports />} />
+        <Route path="settings" element={<AdminSettings />} />
       </Route>
 
       {/* ==================== ERROR PAGES ==================== */}
